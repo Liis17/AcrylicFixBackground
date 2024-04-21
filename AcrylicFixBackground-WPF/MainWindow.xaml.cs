@@ -47,12 +47,12 @@ namespace AcrylicFixBackground_WPF
             Background = brush;
         } //На случай если цвет в Color, а не Brush [сейчас неиспользуется]
 
-        public static Brush ChangeOpacity(Color color, double opacity)
+        private Brush ChangeOpacity(Color color, double opacity)
         {
             color.A = (byte)(opacity * 255);
             return new SolidColorBrush(color);
         } //Изменение прозрачности цвета на необходимую
-        public static Brush ChangeOpacity(Brush brush, double opacity)
+        private Brush ChangeOpacity(Brush brush, double opacity)
         {
             if (brush is SolidColorBrush solidColorBrush)
             {
